@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your product or service description here">
+    <title>Responsive Navbar with Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/136ce2ce1d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <p>LOGO</p>
+        <nav>
+            <ul id="nav-list">
+                <li  style="margin-top: 07px;"><a id="navbar1" href="#">Home</a></li>
+                <li style="margin-top: 07px;"><a id="navbar1" href="#">About</a></li>
+                <li style="margin-top: 07px;"><a id="navbar1" href="#">Services</a></li>
+                <li style="margin-top: 07px;"><a id="navbar1" href="#">Contact</a></li>
+                <li style="margin-top: px;"><button  id="login-btn" class="nav-button">Login</button></li>
+                <li style="margin-top: px;"><button id="navbar1" class="nav-button">Sign Up</button></li>
+            </ul>
+            <button class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <div id="login-popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="submit-button">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <section class="paragraph-content">
+            <h2>About Our Service</h2>
+            <p>Our service offers exceptional quality and unparalleled convenience. Join us today and experience the difference.</p>
+        </section>
+
+        <section id="contact" class="contact-form">
+            <h2>Contact Us</h2>
+            <form id="form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit" id="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <div>
+            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="#"><i class="fa-solid fa-x"></i></a>
+            <a href="#"><i class="fa-brands fa-square-instagram" alt="Instagram"></i></a>
+        </div>
+    </footer>
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #2596be;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    max-width: 100px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+#navbar1:hover{
+    background-color: #2596be;
+    color: chartreuse;
+    text-decoration:overline dashed;
+}
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a,
+.nav-button {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    background: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background: #555;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.paragraph-content,
+.contact-form {
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.paragraph-content {
+    padding: 2rem;
+    background: #063970;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.contact-form {
+    background: #2596be;
+    padding: 2rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.contact-form h2 {
+    margin-bottom: 1rem;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.contact-form label {
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-form button:hover {
+    background: #555;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.popup-content h2 {
+    margin-bottom: 1rem;
+}
+
+.popup-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-content label {
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.popup-content input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup-content .submit-button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.popup-content .submit-button:hover {
+    background: #555;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer div {
+    margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .paragraph-content,
+    .contact-form {
+        margin: 1rem 0;
+    }
+}
+
+    </style>
+    <script>
+        document.getElementById('login-btn').addEventListener('click', function() {
+    document.getElementById('login-popup').style.display = 'flex';
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('login-popup').style.display = 'none';
+});
+
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username === '' || password === '') {
+        alert('Please fill in all fields');
+        return;
+    }
+
+    alert('Login form submitted successfully!');
+    document.getElementById('login-popup').style.display = 'none';
+});
+
+document.getElementById('mobile-menu').addEventListener('click', function() {
+    document.getElementById('nav-list').classList.toggle('active');
+});
+
+    </script>
+</body>
+</html>
+
