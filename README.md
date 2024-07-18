@@ -1,2 +1,2 @@
 # intenship
-in this repository i am uploading my intenship tasks
+in this repository, I am uploading my internship tasks
